@@ -46,28 +46,21 @@ void delay_ns (u8 t);
 #define BITBAND(addr, bitnum) ((addr & 0xF0000000)+0x2000000+((addr&0xFFFFF)<<5)+(bitnum<<2))
 #define MEM_ADDR(addr) *((volatile unsigned long *)(addr))
 #define BIT_ADDR(addr, bitnum) MEM_ADDR(BITBAND(addr, bitnum))
-#define GPIOA_ODR_Addr (GPIOA_BASE+20) //0x40020014
-#define GPIOB_ODR_Addr (GPIOB_BASE+20) //0x40020414
-#define GPIOC_ODR_Addr (GPIOC_BASE+20) //0x40020814
-#define GPIOD_ODR_Addr (GPIOD_BASE+20) //0x40020C14
-#define GPIOE_ODR_Addr (GPIOE_BASE+20) //0x40021014
-#define GPIOF_ODR_Addr (GPIOF_BASE+20) //0x40021414
-#define GPIOG_ODR_Addr (GPIOG_BASE+20) //0x40021814
-#define GPIOH_ODR_Addr (GPIOH_BASE+20) //0x40021C14
-#define GPIOI_ODR_Addr (GPIOI_BASE+20) //0x40022014
-#define GPIOJ_ODR_ADDr (GPIOJ_BASE+20) //0x40022414
-#define GPIOK_ODR_ADDr (GPIOK_BASE+20) //0x40022814
-#define GPIOA_IDR_Addr (GPIOA_BASE+16) //0x40020010
-#define GPIOB_IDR_Addr (GPIOB_BASE+16) //0x40020410
-#define GPIOC_IDR_Addr (GPIOC_BASE+16) //0x40020810
-#define GPIOD_IDR_Addr (GPIOD_BASE+16) //0x40020C10
-#define GPIOE_IDR_Addr (GPIOE_BASE+16) //0x40021010
-#define GPIOF_IDR_Addr (GPIOF_BASE+16) //0x40021410
-#define GPIOG_IDR_Addr (GPIOG_BASE+16) //0x40021810
-#define GPIOH_IDR_Addr (GPIOH_BASE+16) //0x40021C10
-#define GPIOI_IDR_Addr (GPIOI_BASE+16) //0x40022010
-#define GPIOJ_IDR_Addr (GPIOJ_BASE+16) //0x40022410
-#define GPIOK_IDR_Addr (GPIOK_BASE+16) //0x40022810
+#define GPIOA_ODR_Addr    (GPIOA_BASE+12) //0x4001080C 
+#define GPIOB_ODR_Addr    (GPIOB_BASE+12) //0x40010C0C 
+#define GPIOC_ODR_Addr    (GPIOC_BASE+12) //0x4001100C 
+#define GPIOD_ODR_Addr    (GPIOD_BASE+12) //0x4001140C 
+#define GPIOE_ODR_Addr    (GPIOE_BASE+12) //0x4001180C 
+#define GPIOF_ODR_Addr    (GPIOF_BASE+12) //0x40011A0C    
+#define GPIOG_ODR_Addr    (GPIOG_BASE+12) //0x40011E0C    
+
+#define GPIOA_IDR_Addr    (GPIOA_BASE+8) //0x40010808 
+#define GPIOB_IDR_Addr    (GPIOB_BASE+8) //0x40010C08 
+#define GPIOC_IDR_Addr    (GPIOC_BASE+8) //0x40011008 
+#define GPIOD_IDR_Addr    (GPIOD_BASE+8) //0x40011408 
+#define GPIOE_IDR_Addr    (GPIOE_BASE+8) //0x40011808 
+#define GPIOF_IDR_Addr    (GPIOF_BASE+8) //0x40011A08 
+#define GPIOG_IDR_Addr    (GPIOG_BASE+8) //0x40011E08 
 //IO⼝操作,只对单⼀的IO⼝
 //确保n的值⼩于16
 #define PAout(n) BIT_ADDR(GPIOA_ODR_Addr,n) //输出
